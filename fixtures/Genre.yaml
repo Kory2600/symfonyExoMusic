@@ -1,0 +1,4 @@
+App\Entity\Genre : 
+  Genre{0..5} :
+    label : "<word()>"
+    

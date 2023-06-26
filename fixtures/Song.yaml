@@ -1,0 +1,9 @@
+App\Entity\Song : 
+  Song{0..1500} :
+    title : "<word()>"
+    duration: "<numberBetween(60,250)>"
+    createdAt : "<dateTimeBetween('1950-01-01', 'now')>"
+    Users : "@User*"
+    genre : "@Genre*"
+    albums : "2x @Album*"
+    

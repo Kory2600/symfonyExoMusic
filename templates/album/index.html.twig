@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AlbumController!{% endblock %}
+
+{% block body %}
+ {{form_start(form)}}
+    {{form_row(form.title)}}
+    <button type="submit">Valider</button>
+    {{form_end(form)}}
+
+    {% if albums|length == 0 %}
+    <p>Aucun album trouvé !!!!</p>
+    {% endif %}
+    {% if albums|length == 1 %}
+    <p> {{ albums|length }} Album trouvé </p>
+    {% endif %}
+    {% if albums|length > 1 %}
+    <p> {{ albums|length }} Albums trouvés </p>
+    {% endif %}
+<div class="container">
+  <div class="row">
+ {% for album in albums %}
+    <div class="col-3">
+        <div class="card" style="width: 18rem;">
+        <img src="https://fakealbumcovers.com/images/FakeAlbumCover.png" class="card-img-top" alt="...">
+        <div class="card-body">
+    <h5 class="card-title">{{ album.title }}</h5>
+    <p> {{album.createdAt|date('Y-m-d h:i:s')}} </p>
+    <a href="{{ path ('app_get_to_album', {'albumId': album.id}) }}">Voir Plus</a>
+    <br>
+    <a href="{{ path ('app_album_edit', {'albumId': album.id}) }}">Editer</a>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

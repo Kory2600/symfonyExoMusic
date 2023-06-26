@@ -1,0 +1,5 @@
+App\Entity\Album : 
+  Album{0..150} :
+    title : "<word()>"
+    createdAt : "<dateTimeBetween('1950-01-01', 'now')>"
+    cover : ""

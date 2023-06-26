@@ -1,0 +1,6 @@
+App\Entity\User : 
+  User{0..200} :
+    nom (unique) : "<lastName()>"
+    prenom : "<firstName()>"
+    password : "<password()>"
+    roles : "[]"
